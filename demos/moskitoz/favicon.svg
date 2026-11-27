@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect x="8" y="8" width="496" height="496" rx="120" fill="#B8F53A" stroke="#1E1633" stroke-width="16"/>
+  <circle cx="256" cy="236" r="200" fill="#C9FA5C"/>
+  <circle cx="256" cy="236" r="140" fill="#DDFF7A"/>
+  <g stroke="#1E1633" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- legs -->
+    <g stroke-width="10">
+      <path d="M232 352 L196 418 L168 446"/>
+      <path d="M262 358 L270 428 L252 460"/>
+      <path d="M296 346 L350 398 L384 424"/>
+    </g>
+    <!-- wings -->
+    <g stroke-width="11" fill="#F4FBFF">
+      <ellipse cx="222" cy="202" rx="92" ry="34" transform="rotate(-58 222 202)"/>
+      <ellipse cx="292" cy="196" rx="92" ry="32" transform="rotate(-84 292 196)"/>
+    </g>
+    <!-- abdomen -->
+    <ellipse cx="165" cy="338" rx="100" ry="60" transform="rotate(-18 165 338)" fill="#FF5B4A" stroke="none"/>
+    <g transform="rotate(-18 165 338)" stroke="#FFFFFF" stroke-width="17" stroke-linecap="butt">
+      <path d="M115 288 L115 388"/><path d="M160 280 L160 396"/><path d="M205 284 L205 392"/>
+    </g>
+    <ellipse cx="165" cy="338" rx="100" ry="60" transform="rotate(-18 165 338)" stroke-width="13"/>
+    <!-- thorax + head -->
+    <circle cx="262" cy="292" r="58" fill="#FF5B4A" stroke-width="13"/>
+    <circle cx="346" cy="246" r="64" fill="#FF5B4A" stroke-width="13"/>
+    <!-- antennae -->
+    <g stroke-width="8">
+      <path d="M326 192 Q316 146 280 130"/>
+      <path d="M356 188 Q372 146 346 118"/>
+    </g>
+    <circle cx="280" cy="130" r="9" fill="#1E1633"/>
+    <circle cx="346" cy="118" r="9" fill="#1E1633"/>
+    <!-- eye -->
+    <ellipse cx="362" cy="234" rx="30" ry="34" fill="#FFFFFF" stroke-width="9"/>
+    <circle cx="371" cy="240" r="14" fill="#1E1633" stroke="none"/>
+    <circle cx="376" cy="234" r="5" fill="#FFFFFF" stroke="none"/>
+    <!-- proboscis -->
+    <path d="M396 268 L458 330" stroke-width="13"/>
+    <path d="M396 268 L458 330" stroke-width="5" stroke="#FFFFFF" stroke-opacity="0.0"/>
+  </g>
+</svg>

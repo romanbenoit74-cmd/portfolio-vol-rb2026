@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banc des transitions</title>
+<style>:root{--noir:#070707;--rouge:#e5231b;--creme:#e9e4d4;--gris:#8d877b}html,body{background:var(--noir);height:100%;color:var(--creme);margin:0;font:13px/1.4 system-ui,sans-serif;overflow:hidden}canvas{width:100%;height:100%;position:fixed;inset:0}aside{box-sizing:border-box;background:#070707e0;border-left:1px solid #222;align-content:start;gap:12px;width:min(340px,92vw);padding:16px;display:grid;position:fixed;top:0;bottom:0;right:0;overflow:auto}h1{margin:0;font-size:15px}.boutons{z-index:1;background:#070707f5;border-bottom:1px solid #222;flex-wrap:wrap;gap:6px;margin:-16px -16px 0;padding:16px;display:flex;position:sticky;top:-16px}button{font:inherit;color:var(--creme);cursor:pointer;background:#1a1917;border:1px solid #333;border-radius:6px;padding:6px 10px}button[aria-pressed=true]{background:var(--rouge);border-color:var(--rouge)}button:focus-visible,input:focus-visible{outline:2px solid var(--rouge);outline-offset:2px}fieldset{border:0;border-top:1px solid #2a2a2a;gap:6px;margin:0;padding:8px 0 0;display:grid}legend{color:var(--gris);letter-spacing:.06em;text-transform:uppercase;padding:0;font-size:11px}label{grid-template-columns:1fr auto;gap:2px 8px;display:grid}label output{color:var(--gris);font-family:ui-monospace,monospace}label input{width:100%;accent-color:var(--rouge);grid-column:1/-1}select{font:inherit;color:var(--creme);background:#1a1917;border:1px solid #333;border-radius:6px;padding:4px}#etat{color:var(--gris);min-height:1.4em}</style>
+  <script type="module" crossorigin src="./assets/transitions-Bkzph4SD.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-P2Xu9kJm.js">
+  <link rel="modulepreload" crossorigin href="./assets/vecto-BrTVyHhD.js">
+</head>
+<body>
+<canvas id="scene"></canvas>
+<aside>
+  <div class="boutons">
+    <h1 style="flex-basis:100%">Banc des transitions</h1>
+    <div id="liste" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+    <button id="rejouer">Rejouer</button>
+    <button id="ralenti" aria-pressed="false">Ralenti × 0,25</button>
+    <button id="molette" aria-pressed="false">#184 Molette = timeline</button>
+    <button id="copier">Copier les valeurs</button>
+    <button id="defaut">Remettre par défaut</button>
+  </div>
+  <div id="etat" role="status"></div>
+  <fieldset><legend>Poses</legend>
+    <label>A <select id="poseA"></select></label>
+    <label>B <select id="poseB"></select></label>
+    <label>Avancement <output id="kSortie">0</output><input type="range" id="k" min="0" max="1" step="0.001" value="0"></label>
+  </fieldset>
+  <div id="curseurs"></div>
+</aside>
+</body>
+</html>

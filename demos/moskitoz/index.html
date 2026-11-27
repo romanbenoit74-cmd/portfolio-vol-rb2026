@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>moskiTOZ</title>
+<meta name="description" content="moskiTOZ : FPS acrobatique cartoon. Descendez une tour de 100 étages à mains nues contre des moustiques.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- install on the home screen (iPhone: Share > Sur l'écran d'accueil · Android: Installer l'application) -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="moskiTOZ">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#B8F53A">
+<!-- link preview (Discord, WhatsApp, iMessage, Slack, X…) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="moskiTOZ">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://moskitoz.win/">
+<meta property="og:title" content="moskiTOZ · le FPS cartoon à 100 étages">
+<meta property="og:description" content="Descends la tour à mains nues, esquive les moustiques, débloque des armes dingues et grimpe au classement. Gratuit, dans ton navigateur.">
+<meta property="og:image" content="https://moskitoz.win/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo moskiTOZ devant la tour de 100 étages et un moustique">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="moskiTOZ · le FPS cartoon à 100 étages">
+<meta name="twitter:description" content="Descends la tour à mains nues, esquive les moustiques, grimpe au classement. Gratuit, dans ton navigateur.">
+<meta name="twitter:image" content="https://moskitoz.win/og-image.jpg">
+<link rel="preload" href="./vendor/fonts/LilitaOne-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./vendor/fonts/Nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<link rel="stylesheet" href="./src/ui/ui.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/addons/" } }
+</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="hud" class="hidden"></div>
+<div id="fade"></div>
+<div id="screen" class="hidden"></div>
+<div id="iris"><i></i></div>
+<div id="rotate" aria-hidden="true"><div><b>↻</b><p>Tourne ton téléphone</p><small>moskiTOZ se joue en mode paysage</small></div></div>
+<script>
+  // no pinch / double-tap zoom (iOS ignores user-scalable=no) + installable app shell
+  for (const t of ['gesturestart', 'gesturechange', 'gestureend']) document.addEventListener(t, (e) => e.preventDefault());
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+</script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

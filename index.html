@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roman Benoit — vente × tech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>:root{--noir:#070707;--rouge:#e5231b;--creme:#e9e4d4;--encre:#111;--cyan:#35d0c8;--f-titre:"Instrument Serif", Georgia, serif;--f-texte:"Space Grotesk", system-ui, sans-serif;--f-mono:"JetBrains Mono", ui-monospace, monospace}html,body{background:var(--noir);height:100%;color:var(--creme);overscroll-behavior:none;font:16px/1.5 var(--f-texte);margin:0;overflow:hidden}body{background:0 0}.curseur-maison,.curseur-maison *{cursor:none}canvas{touch-action:none;width:100%;height:100%;position:fixed;inset:0}a{color:inherit}a:hover{color:var(--cyan)}:focus-visible{outline:2px solid var(--rouge);outline-offset:3px}#menu{z-index:5;gap:16px;font-size:14px;display:flex;position:fixed;top:20px;left:24px}#menu .langues{border-left:1px solid #e9e4d433;gap:2px;margin-left:12px;padding-left:16px;display:flex}#menu .langues button{color:inherit;font:500 12px var(--f-mono);letter-spacing:.08em;opacity:.5;cursor:pointer;background:0 0;border:0;padding:0 4px;transition:opacity .25s,color .25s}#menu .langues button:hover,#menu .langues button:focus-visible{opacity:1}#menu .langues button[aria-pressed=true]{opacity:1;color:var(--rouge)}#menu a{color:var(--creme);text-decoration:none;transition:color .25s}#menu a:hover,#menu a:focus-visible,#menu a[aria-current=true]{color:var(--rouge)}#menu a[aria-current=true]{opacity:1;border-bottom:2px solid var(--rouge)}#repere{left:calc(24px + var(--x,0px));z-index:5;position:fixed;top:50px}#repere[hidden],#repere [hidden]{display:none}#repere div{border-left:1px solid #e9e4d433;flex-direction:column;gap:5px;padding-left:10px;animation:.4s both repere-entre;display:flex}#repere a{font:500 11px/1.3 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--creme);opacity:.45;text-decoration:none;transition:opacity .25s,color .25s}#repere a:hover,#repere a:focus-visible{opacity:.9}#repere a[aria-current=true]{opacity:1;color:var(--rouge)}@keyframes repere-entre{0%{opacity:0;translate:0 -4px}}@media (prefers-reduced-motion:reduce){#repere div{animation:none}}body:has(#entree) #repere{visibility:hidden}@media (max-width:700px){#repere{top:46px;left:16px}#repere div{flex-direction:row;gap:14px}#repere a{font-size:10px}#menu{gap:12px;font-size:12px;left:12px;right:12px}#menu .langues{margin-left:auto;padding-left:8px}#menu .langues button{padding:0 2px;font-size:11px}}section{z-index:2;opacity:0;visibility:hidden;max-width:min(30em,40vw);transition:opacity .6s,transform .6s,visibility .6s;position:fixed;top:38%;left:6vw;transform:translateY(16px)}section.actif{opacity:1;visibility:visible;transform:none}section.pano{opacity:1;visibility:visible;will-change:translate;transition:none;transform:none}section[data-sortie]:not(.actif){transition:opacity .9s cubic-bezier(.55,0,1,.45),transform .9s cubic-bezier(.55,0,1,.45),visibility .9s}section[data-sortie=haut]:not(.actif){transform:translateY(-55vh)}section[data-sortie=bas]:not(.actif){transform:translateY(55vh)}section.actif[data-entree=bas]{animation:1.1s cubic-bezier(.22,1,.36,1) .35s both entre-bas}section.actif[data-entree=haut]{animation:1.1s cubic-bezier(.22,1,.36,1) .35s both entre-haut}@keyframes entre-bas{0%{opacity:0;transform:translateY(45vh)}}@keyframes entre-haut{0%{opacity:0;transform:translateY(-45vh)}}@media (prefers-reduced-motion:reduce){section[data-sortie]:not(.actif){transform:none}section.actif:is([data-entree=bas],[data-entree=haut]){animation:none}}h1,h2{font:400 clamp(28px,3.6vw,52px)/1.1 var(--f-titre);margin:0 0 .4em}section p{opacity:.85;margin:0}.indice{font:14px var(--f-mono);opacity:.6;margin-top:1.5em}section.balaye{-webkit-mask-image:linear-gradient(var(--sens), #000 var(--b), transparent calc(var(--b) + 30%));-webkit-mask-image:linear-gradient(var(--sens), #000 var(--b), transparent calc(var(--b) + 30%));mask-image:linear-gradient(var(--sens), #000 var(--b), transparent calc(var(--b) + 30%))}@media (max-width:700px){section{max-width:none;inset:auto 16px 8vh}}#accueil{max-width:none;inset:0;transform:none;filter:none!important}#accueil.balaye{-webkit-mask-image:none;mask-image:none}#menu{transition:translate .6s cubic-bezier(.22,1,.36,1),visibility .4s,opacity .4s}#repere{transition:left .4s cubic-bezier(.22,1,.36,1),visibility .4s,opacity .4s}body:has(section[data-scene=creations] :is(.fiche:not([hidden]),.n8n:not([hidden]))) :is(#menu,#repere){opacity:0;visibility:hidden}#entree{z-index:40;background:var(--noir);color:var(--creme);text-align:center;place-items:center;padding:0 16px;display:grid;position:fixed;inset:0}#entree .temps{justify-items:center;gap:30px;display:grid}#entree .temps[hidden]{display:none}#entree .choix{gap:clamp(20px,3.4vw,48px);display:flex}#entree .cadran{aspect-ratio:1;width:clamp(104px,11vw,150px);color:var(--creme);font:500 clamp(16px, 1.4vw, 20px) var(--f-mono);letter-spacing:.14em;background:0 0;border:0;place-items:center;padding:0;transition:transform .5s cubic-bezier(.22,1,.36,1);display:grid;position:relative}#entree .cadran svg{pointer-events:none;width:100%;height:100%;position:absolute;inset:0;overflow:visible}#entree .cadran span{padding-left:.14em;transition:text-shadow .3s}#entree .cadran:focus-visible{outline:none}#entree .grad line{stroke:#e9e4d438;stroke-width:.9px;stroke-linecap:round;transition:stroke .12s}#entree .grad line.long{stroke:#e9e4d480;stroke-width:1.3px}#entree .grad line.on{stroke:var(--rouge)}#entree .anneau{fill:none;stroke:#e9e4d41a;stroke-width:.6px;transition:stroke .4s,filter .4s}#entree .cadran.plein .anneau{stroke:var(--rouge);stroke-width:1.2px;filter:drop-shadow(0 0 4px var(--rouge))}#entree .cadran.plein span{text-shadow:0 0 14px #e5231be6}#entree .cadran.plein{animation:.5s cubic-bezier(.22,1,.36,1) valide}@keyframes valide{40%{transform:scale(1.07)}}#entree .pictos{justify-items:center;gap:22px;display:grid}#entree .pictos svg{fill:none;stroke-width:1.6px;stroke-linecap:round;stroke-linejoin:round;overflow:visible}#entree .pictos .fond{stroke:#e9e4d43d;transition:stroke .6s}#entree .moitie{stroke:var(--rouge);stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--p,0));filter:drop-shadow(0 0 3px #e5231bcc);transition:opacity .7s .2s}#entree .molette{stroke:var(--creme)}#entree .touche{opacity:0;transition:opacity .6s .35s,transform .7s cubic-bezier(.22,1,.36,1) .35s;transform:translateY(-6px)}#entree .touche .cle{transform-box:fill-box;transform-origin:bottom}#entree .consigne.pret .souris .fond{stroke:var(--creme)}#entree .consigne.pret .moitie{opacity:0}#entree .consigne.pret .touche{opacity:1;transform:none}#entree .consigne.pret .molette{animation:2.4s ease-in-out infinite molette}#entree .consigne.pret .cle{animation:2.4s ease-in-out infinite appui}@keyframes molette{0%,8%{opacity:1;transform:none}30%{opacity:0;transform:translateY(7px)}31%,to{opacity:1;transform:none}}@keyframes appui{0%,52%,72%,to{stroke:var(--creme);transform:none}58%,64%{stroke:var(--rouge);filter:drop-shadow(0 0 4px #e5231bcc);transform:translateY(3px)scaleY(.86)}}#entree .phrase{max-width:17em;font:400 clamp(26px, 3vw, 40px)/1.15 var(--f-titre);margin:0}#entree .pictos:not([hidden])+.phrase{clip-path:inset(50%);width:1px;height:1px;position:absolute;overflow:hidden}body:has(#entree) #menu{visibility:hidden}body:has(#entree) #halo{z-index:41}@media (max-width:700px){#entree .choix{gap:14px}#entree .cadran{width:28vw}}@media (prefers-reduced-motion:reduce){#entree :is(.molette,.cle){animation:none!important}}#curseur,#anneau{z-index:20;pointer-events:none;border-radius:50%;position:fixed;top:0;left:0}#curseur{background:var(--rouge);width:8px;height:8px;margin:-4px}#anneau{border:1.5px solid var(--rouge);width:36px;height:36px;margin:-18px;transition:scale .25s}#anneau.gros{scale:1.8}#halo{z-index:19;pointer-events:none;position:fixed;inset:0}.curseur-maison:not(.sur-carte) :is(#curseur,#anneau){opacity:0}#curseur,#anneau{transition:opacity .25s,scale .25s}</style>
+  <script type="module" crossorigin src="./assets/main-DS286yuO.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-P2Xu9kJm.js">
+  <link rel="modulepreload" crossorigin href="./assets/vecto-BrTVyHhD.js">
+  <link rel="stylesheet" crossorigin href="./assets/main-DaQvC7U2.css">
+</head>
+<body>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div id="entree" role="dialog" aria-modal="true" aria-label="Langue · Language · Idioma">
+  <div class="temps langue">
+    <div class="choix"><button type="button" class="cadran" data-l="fr" aria-label="Français"><span>FR</span></button><button type="button" class="cadran" data-l="en" aria-label="English"><span>EN</span></button><button type="button" class="cadran" data-l="es" aria-label="Español"><span>ES</span></button></div>
+  </div>
+  <div class="temps consigne" hidden>
+    <div class="pictos" aria-hidden="true">
+      <svg class="souris" width="42" height="64" viewBox="0 0 42 64"><rect class="fond" x="1" y="1" width="40" height="62" rx="20"/>
+        <path class="moitie" d="M21 1 A20 20 0 0 0 1 21 V43 A20 20 0 0 0 21 63" pathLength="1"/><path class="moitie" d="M21 1 A20 20 0 0 1 41 21 V43 A20 20 0 0 1 21 63" pathLength="1"/>
+        <line class="molette" x1="21" y1="11" x2="21" y2="20"/></svg>
+      <svg class="touche" width="104" height="32" viewBox="0 0 104 32"><rect class="fond cle" x="1" y="1" width="102" height="28" rx="6"/></svg>
+    </div>
+    <p class="phrase"></p>
+  </div>
+</div>
+<!-- S2 : le motif ondule sous la souris (s2.css, .lentille) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="vivant" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="3"><animate attributeName="baseFrequency" values="0.012;0.022;0.012" dur="7s" repeatCount="indefinite"/></feTurbulence>
+  <feDisplacementMap in="SourceGraphic" scale="40"/>
+</filter></svg>
+
+<nav id="menu" aria-label="Scènes">
+  <a href="#accueil">Accueil</a>
+  <a href="#about">About</a>
+  <a href="#work">Work</a>
+  <a href="#contact">Contact</a>
+  <span class="langues" role="group" aria-label="Choisir la langue"><button type="button" data-langue="fr" aria-pressed="true">FR</button><button type="button" data-langue="en" aria-pressed="false">EN</button><button type="button" data-langue="es" aria-pressed="false">ES</button></span>
+</nav>
+<nav id="repere" aria-label="Parties de l’onglet" hidden>
+  <div data-onglet="about"><a href="#parcours">Parcours</a><a href="#competences">Compétences</a></div>
+  <div data-onglet="work"><a href="#terrain">Terrain</a><a href="#creations">Créations</a></div>
+</nav>
+
+<h1 id="nom-accueil"><span class="a">Roman</span> <span class="b">Benoit</span></h1>
+
+<main>
+  <section data-scene="accueil" id="accueil" aria-label="Accueil">
+    <div class="infos">
+      <div class="masque"><p data-info="1">20 ans, en 3e année de <em>Bachelor Business International</em>.</p></div>
+      <div class="masque"><p data-info="2">Autodidacte, je construis des sites, des jeux et des automatisations <em>avec l’IA</em>.</p></div>
+      <div class="masque"><p data-info="3">Je cherche un <em>stage de 90 jours</em>, de février à avril 2027.</p></div>
+    </div>
+    <div class="bas">
+      <div class="points" role="group" aria-label="Les trois informations"><button type="button" aria-label="Information 1"></button><button type="button" aria-label="Information 2"></button><button type="button" aria-label="Information 3"></button></div>
+      <a class="lien" href="#contact">Me contacter</a>
+    </div>
+  </section>
+  <section data-scene="parcours" id="parcours" aria-label="Le parcours">
+    <!-- la fiche à durées (retour du 24/11) : n°, étape, durée sur une règle 2021–2027 (parcours.js pose les traits), phrase ; par année -->
+    <div class="cadre">
+      <span class="coin" aria-hidden="true">+</span><span class="coin" aria-hidden="true">+</span><span class="coin" aria-hidden="true">+</span><span class="coin" aria-hidden="true">+</span>
+      <div class="tete" aria-hidden="true"><span>N°</span><span>Étape</span><span class="ech"><span>2021</span><span>2027</span></span><span></span></div>
+      <ul>
+        <li><span class="id"><i></i>01</span><b>BIA</b><span class="duree"><span class="piste" data-de="2021"></span><small>2021</small></span><span class="ph">Brevet d’initiation à l’aéronautique, 2021, mention assez bien. C’est lui qui « pilote » ce portfolio.</span></li>
+        <li><span class="id"><i></i>02</span><b>Lycée</b><span class="duree"><span class="piste" data-de="2024"></span><small>2024</small></span><span class="ph">Bac STI2D à Annecy, 2024, mention assez bien.</span></li>
+        <li><span class="id"><i></i>03</span><b>Études sup</b><span class="duree"><span class="piste" data-de="2024" data-a="2027"></span><small>2024–2027</small></span><span class="ph">4 jobs de terrain depuis 2022, un bachelor à l’Ipac (2024–2025), un échange à Bangkok (2025–2026), des créations construites avec l’IA et n8n.</span></li>
+        <li><span class="id"><i></i>04</span><b>Kasetsart University</b><span class="duree"><span class="piste" data-de="2025" data-a="2026"></span><small>2025–2026</small></span><span class="ph">Année d’échange universitaire à Kasetsart University (2025–2026) : cours en anglais, nouvelle culture, et la découverte de l’automatisation avec n8n.</span></li>
+        <li class="suite"><span class="id"><i></i>05</span><b>À suivre</b><span class="duree"><span class="piste" data-suite></span><small>→</small></span><span class="ph">Business development, entre vente et tech. Un stage ou une expérience de 3 mois.<a class="lien" href="#contact">On en parle ? →</a></span></li>
+      </ul>
+    </div>
+  </section>
+  <section data-scene="terrain" id="terrain" aria-label="Le terrain"></section>
+  <section data-scene="creations" id="creations">
+    <div class="ronde" role="group" aria-label="Les 5 créations : glisser ou flèches pour tourner"></div>
+    <!-- n8n.js : la 5e création, en workflow : l'article (le téléphone et les six étapes), puis l'écran final -->
+    <div class="n8n" role="dialog" aria-modal="true" aria-label="Le bot n8n : le workflow, étape par étape" hidden>
+    <ol class="a-colonne">
+      <li><span class="carre" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><div><p class="num">Le constat · Bangkok, 2025–2026</p><h2>Des dizaines de reels sauvegardés, jamais rouverts.</h2><p>Restos, recettes, voyages : perdus dans la galerie.</p></div></li>
+      <li><span class="carre" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 12h3l4-5M11.5 12l4 5"/></svg></span><div><p class="num">La solution</p><h2>Un bot n8n qui trie à ma place.</h2><p>Je partage, il s’occupe du reste.</p></div></li>
+      <li><span class="carre" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><div><p class="num">01 · Déclencheur</p><h2>Je partage le reel sur WhatsApp.</h2><p>Le bot le reçoit aussitôt.</p></div></li>
+      <li><span class="carre" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="2"/><circle cx="12" cy="12" r="2"/></svg></span><div><p class="num">02 · Analyse</p><h2>L’IA regarde la vidéo.</h2><p>Elle note le lieu, les horaires, l’essentiel.</p></div></li>
+      <li><span class="carre" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h6l5-7h7M9 12h12M9 12l5 7h7"/></svg></span><div><p class="num">03 · Tri</p><h2>Le reel est rangé tout seul.</h2><p>Restos, recettes ou voyages.</p></div></li>
+      <li><span class="carre" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span><div><p class="num">04 · Envoi</p><h2>Chaque lundi, ma liste arrive.</h2><p>Sur WhatsApp, prête à cocher.</p></div></li>
+    </ol>
+    <span class="a-voile" aria-hidden="true"></span>
+    <div class="a-tel" aria-hidden="true">
+      <div class="statut"><b>9:41</b><span class="icones"><i class="reseau"></i><i class="wifi"></i><i class="batterie"></i></span></div>
+      <div class="a-galerie"><div class="haut"><i class="logo"></i><i class="barre"></i></div><div class="a-grille"></div><p class="a-compte"><span><b>247</b><i class="ico sauve"></i></span><span><b>0</b><i class="ico oeil"></i></span></p></div>
+      <div class="a-chat">
+        <div class="b-qui"><i></i><div class="fil-bas"><i class="barre"></i><i class="barre court"></i></div></div>
+        <!-- le fil : il remonte pour montrer le dernier message (n8n.js), comme une vraie conversation -->
+        <div class="a-fil"><div class="a-defile">
+          <div class="msg moi" data-a="2"><i></i><span class="barre court"></span></div>
+          <div class="msg bot" data-a="3"><div class="ligne"><i class="ico lieu"></i><span class="barre"></span></div><div class="ligne"><i class="ico heure"></i><span class="barre court"></span></div></div>
+          <div class="msg bot" data-a="4"><div class="puces"><span class="oui"><i class="ico couvert"></i></span><span><i class="ico pot"></i></span><span><i class="ico avion"></i></span></div></div>
+          <div class="msg bot" data-a="5"><ul><li><span class="barre"></span></li><li><span class="barre court"></span></li><li><span class="barre"></span></li></ul></div>
+        </div></div>
+        <div class="saisie"><span class="barre court"></span><i></i></div>
+      </div>
+    </div>
+    <div class="a-progres" aria-hidden="true"><span class="n">01</span><span class="sur">/ 06</span><span class="barres"><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <!-- le téléphone du bilan : schématique comme celui de l'article (retour du 23/11) ; les mots sont à droite, reliés par le fil rouge -->
+    <div class="bloc b-tel" aria-label="La conversation avec le bot">
+      <div class="statut" aria-hidden="true"><b>9:41</b><span class="icones"><i class="reseau"></i><i class="wifi"></i><i class="batterie"></i></span></div>
+      <div class="b-qui"><i></i><div class="fil-bas"><i class="barre"></i><i class="barre court"></i></div></div>
+      <div class="msg moi" data-note="0"><i></i><span class="barre court"></span></div>
+      <div class="msg bot" data-note="1"><div class="ligne"><i class="ico lieu"></i><span class="barre"></span></div><div class="puces"><span class="oui"><i class="ico couvert"></i></span><span><i class="ico pot"></i></span><span><i class="ico avion"></i></span></div></div>
+      <div class="msg bot" data-note="2"><ul><li><span class="barre"></span></li><li><span class="barre court"></span></li><li><span class="barre"></span></li></ul></div>
+      <div class="saisie"><span class="barre court"></span><i></i></div>
+    </div>
+    <div class="bloc b-droite">
+      <p class="b-sur">Le bot n8n · Bangkok, 2025–2026</p>
+      <h2>Je partage un reel.<br><em>Il fait le reste.</em></h2>
+      <div class="b-notes">
+        <div data-n="0"><b>Je partage</b><span>Un reel envoyé au bot, comme à un ami.</span></div>
+        <div data-n="1"><b>L’IA comprend et range</b><span>Resto, recette ou voyage : rangé tout seul.</span></div>
+        <div data-n="2"><b>La liste arrive</b><span>Chaque semaine sur WhatsApp, prête à cocher.</span></div>
+      </div>
+      <!-- la chute (retour du 25/11, V1) : plus de « 120 reels », la phrase de l'entreprise en grand -->
+      <p class="b-chute">En entreprise, la même mécanique relance les prospects et fait le point des ventes.</p>
+    </div>
+    <svg class="b-fil" aria-hidden="true"><path pathLength="1"/></svg>
+    <button type="button" class="retour">← Retour</button>
+    </div>
+    <button type="button" class="suite" aria-label="Scène suivante">→</button>
+    <div class="fiche" role="dialog" aria-modal="true" aria-label="Fiche de la création" hidden>
+      <button type="button" class="retour">← Retour</button>
+      <div class="texte"></div>
+      <div class="cadre">
+        <div class="media"></div>
+        <button type="button" class="plein" aria-label="Plein écran"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ouvre" d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/><path class="ferme" d="M19 11h-6V5M13 11l7-7M5 13h6v6M11 13l-7 7"/></svg></button>
+      </div>
+    </div>
+  </section>
+  <section data-scene="competences" id="competences" aria-label="Compétences">
+    <!-- s5.js : le manifeste, trois paragraphes qui se révèlent phrase par phrase -->
+    <div class="manifeste">
+      <div class="texte"></div>
+      <div class="suivi"><span class="points" aria-hidden="true"></span><p class="fin" aria-live="polite"><span>Voilà pour l’essentiel.</span> <a href="#contact">On en parle ? →</a></p></div>
+    </div>
+  </section>
+  <section data-scene="validation" id="validation">
+    <!-- s6.js : la page de contact, que sa carte devient -->
+    <div class="fiche" tabindex="-1">
+      <p class="sur" hidden></p><!-- seulement avec ?pour= (s6.js) : « Contact » au-dessus du titre est retiré (retour du 25/11), comme le nom sous lui -->
+      <h2><span>On commence</span><span><em>quand</em>&nbsp;?</span></h2>
+      <p class="qui"><span>Stage ou expérience de 3 mois en business development</span></p>
+      <ul class="actions">
+        <li><a class="mail"><span class="libelle">E-mail</span><span class="valeur"></span><span class="fleche" aria-hidden="true">→</span></a><span class="etat" aria-live="polite" data-vide="Copier"></span></li>
+        <li><a class="linkedin" target="_blank" rel="noopener"><span class="libelle">LinkedIn</span><span class="valeur"></span><span class="fleche" aria-hidden="true">→</span></a></li>
+        <li><a class="cv" download><span class="libelle">CV</span><span class="valeur">Télécharger le PDF</span><span class="fleche" aria-hidden="true">→</span></a></li>
+      </ul>
+      <p class="pied">Merci d’avoir défilé jusqu’ici.</p>
+    </div>
+    <!-- s6.js : la mise en scène d'avant (sonnette, puis la carte qu'il tend) -->
+    <div class="prelude" hidden>
+      <button class="sonnette" type="button" aria-label="Sonner : Roman arrive">
+        <span class="onde" aria-hidden="true"></span><span class="onde" aria-hidden="true"></span><span class="onde" aria-hidden="true"></span>
+        <svg viewBox="0 0 120 92" aria-hidden="true">
+          <g class="poussoir"><rect class="tige" x="57.5" y="22" width="5" height="14" rx="1"/><rect class="tete" x="49" y="16" width="22" height="7" rx="3.5"/></g>
+          <path class="dome" d="M16 78A44 44 0 0 1 104 78Z"/><path class="reflet" d="M29 68A32 32 0 0 1 41 48"/>
+          <rect class="socle" x="6" y="78" width="108" height="9" rx="2"/>
+        </svg>
+        <span class="invite" aria-hidden="true">Sonnez</span>
+      </button>
+      <button class="carte-contact" type="button" aria-label="Prendre sa carte : les coordonnées de Roman" hidden>
+        <span class="c-nom"></span><span class="c-role">Business developer<br>vente × tech</span><i class="c-pixel" aria-hidden="true"></i>
+        <span class="invite" aria-hidden="true">Prendre</span>
+      </button>
+    </div>
+  </section>
+</main>
+
+<div id="curseur"></div><div id="anneau"></div>
+</body>
+</html>
